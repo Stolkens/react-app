@@ -2,17 +2,22 @@ import styles from './ColumnForm.module.scss';
 import { useState } from 'react';
 import Button from '../Button/Button'
 import TextInput from '../TextInput/TextInput';
+import { useDispatch } from 'react-redux';
 
 
 
-const ColumnForm = props => {
+const ColumnForm = () => {
+
+  const dispatch = useDispatch()
+
   const [title, setTitle] = useState(''); // tworzy stan dla inputa i przypisuje mu wartość początkową '' (pusty string)
   const [icon, setIcon] = useState(''); // tworzy stan dla inputa i przypisuje mu wartość początkową '' (pusty string)
 
   const handleSubmit = (e) => {
     // tworzy funkcję, która będzie wywoływana po kliknięciu w przycisk
     e.preventDefault(); // zapobiega przeładowaniu strony po kliknięciu w przycisk
-    props.action({ title: title, icon: icon }); // wywołuje funkcję przekazaną w propsach, która dodaje nową kolumnę do tablicy kolumn w App.js
+    // props.action({ title: title, icon: icon }); // wywołuje funkcję przekazaną w propsach, która dodaje nową kolumnę do tablicy kolumn w App.js
+    dispatch ({ type: 'ADD_COLUMN', payload: { title, icon } }) // uruchamia akcję przygotowana w reducerze przy uzyciu dispatcha
     setTitle(''); // czyści pole input po dodaniu nowej kolumny
     setIcon('');
   };
