@@ -3,12 +3,13 @@ import initialState from './initialState';
 import shortid from 'shortid';
 
 const reducer = (state, action) => {
-  // if(action.type === 'ADD_COLUMN') 
   switch(action.type) {
     case 'ADD_COLUMN':
       return { ...state, columns: [...state.columns, { id: shortid(), ...action.payload }]};
     case 'ADD_CARD':
       return { ...state, cards: [...state.cards, {...action.payload}]};
+    case 'SEARCHSTRING':
+      return { ...state, searchString: action.payload};
     default:
       return state;
   }
