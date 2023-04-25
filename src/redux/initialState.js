@@ -32,8 +32,8 @@ const initialState = {
     },
     {
       id: 4,
-      title: 'Test',
-      icon: 'test',
+      title: 'Songs',
+      icon: 'music',
       listId: 2,
     }
   ],

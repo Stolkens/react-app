@@ -17,6 +17,8 @@ export const searchString = (payload) => ({type: 'SEARCHSTRING', payload})
 
 export const getListById = ({lists}, listId) =>lists.find(list=>list.id===listId);
 
+export const getColumnsByList = ({columns}, listId ) => columns.filter(column => column.listId === listId);
+
 const reducer = (state, action) => {
   switch(action.type) {
     case 'ADD_COLUMN':
