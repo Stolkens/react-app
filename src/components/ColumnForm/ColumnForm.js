@@ -7,7 +7,7 @@ import { addCollumn } from '../../redux/store';
 
 
 
-const ColumnForm = () => {
+const ColumnForm = props => {
 
   const dispatch = useDispatch()
 
@@ -18,7 +18,7 @@ const ColumnForm = () => {
     // tworzy funkcję, która będzie wywoływana po kliknięciu w przycisk
     e.preventDefault(); // zapobiega przeładowaniu strony po kliknięciu w przycisk
     // props.action({ title: title, icon: icon }); // wywołuje funkcję przekazaną w propsach, która dodaje nową kolumnę do tablicy kolumn w App.js
-    dispatch (addCollumn({title, icon})) // uruchamia akcję przygotowana w reducerze przy uzyciu dispatcha
+    dispatch (addCollumn({title, icon, listId: props.listId})) // uruchamia akcję przygotowana w reducerze przy uzyciu dispatcha
     setTitle(''); // czyści pole input po dodaniu nowej kolumny
     setIcon('');
   };
