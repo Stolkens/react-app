@@ -9,7 +9,7 @@ import { addCollumn } from '../../redux/store';
 
 const ColumnForm = props => {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [title, setTitle] = useState(''); // tworzy stan dla inputa i przypisuje mu wartość początkową '' (pusty string)
   const [icon, setIcon] = useState(''); // tworzy stan dla inputa i przypisuje mu wartość początkową '' (pusty string)
