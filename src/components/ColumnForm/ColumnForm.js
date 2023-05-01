@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from '../Button/Button'
 import TextInput from '../TextInput/TextInput';
 import { useDispatch } from 'react-redux';
-import { addCollumn } from '../../redux/store';
+import { addCollumn } from '../../redux/columnsReducer';
 
 
 
